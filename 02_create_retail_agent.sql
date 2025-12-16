@@ -17,7 +17,7 @@ CREATE OR REPLACE AGENT RETAIL_SALES_AGENT
   FROM SPECIFICATION
   $$
   models:
-    orchestration: snowflake-arctic
+    orchestration: auto
 
   orchestration:
     budget:
