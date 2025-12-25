@@ -52,6 +52,18 @@ All SQL and project files are kept here so you can push them to GitHub.
 - Agent translates natural language questions into optimized Snowflake SQL
 - Supports MoM and YoY revenue analytics
 
+## Snowflake Cortex Agent
+
+This project includes a Snowflake Cortex AI Agent deployed using Snowsight.
+
+- The agent is backed by a semantic model created in the Snowflake UI
+- Cortex Analyst is attached to enable text-to-SQL
+- The agent queries a retail star schema with ~100k fact rows
+- MoM and YoY revenue analytics are supported
+
+> Note: Semantic models and agent attachments are managed Snowflake objects
+> and are created via Snowsight UI rather than SQL.
+
 
 Right now the agent is **instruction‑only** (it doesn’t yet call tools to run SQL),
 but it’s a real Cortex Agent object and is a clean foundation for extending with:
@@ -66,12 +78,19 @@ but it’s a real Cortex Agent object and is a clean foundation for extending wi
 
 ## Suggested GitHub repo layout
 
-```text
-snowflake-ai-agent/
+```
+snowflake-retail-ai-agent/
 ├── README.md
-└── sql/
-    ├── 01_setup_retail_env.sql
-    └── 02_create_retail_agent.sql
+├── sql/
+│   ├── 01_create_schema.sql
+│   ├── 02_create_dimensions.sql
+│   ├── 03_create_fact_sales.sql
+│   ├── 04_data_quality_checks.sql
+│   └── 05_create_agent.sql
+├── docs/
+│   ├── architecture.png
+│   └── agent-ui.png
+
 ```
 
 You can now:
