@@ -42,11 +42,19 @@ All SQL and project files are kept here so you can push them to GitHub.
 6. Click the agent and start chatting with it. Try questions like:
    - *"What kind of retail questions can you help with?"*
    - *"How would I calculate revenue by region for last month?"*
+7.Architecture
+
+- Snowflake warehouse with a retail star schema:
+  - FACT_SALES (~100k rows)
+  - DIM_CUSTOMER, DIM_PRODUCT, DIM_REGION, DIM_DATE
+- Cortex Semantic Model created using Snowsight UI
+- Cortex Analyst attached to a Snowflake AI Agent
+- Agent translates natural language questions into optimized Snowflake SQL
+- Supports MoM and YoY revenue analytics
+
 
 Right now the agent is **instruction‑only** (it doesn’t yet call tools to run SQL),
 but it’s a real Cortex Agent object and is a clean foundation for extending with:
-
-- Cortex Analyst for text‑to‑SQL over `SALES_ORDERS`
 - Custom Snowpark procedures for complex KPIs
 - A UI (Streamlit, React, etc.) that talks to the agent via the Agents API
 
