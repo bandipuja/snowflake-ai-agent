@@ -1,6 +1,6 @@
 # Snowflake Retail Sales AI Agent (Cortex Agents)
 
-This project is a **resume-ready Snowflake Cortex Agent** that acts as a small
+This project is a **Snowflake Cortex Agent** that acts as a small
 *Retail Sales Analytics Assistant*.
 
 You deploy everything using the **Snowflake web UI (Snowsight)** — no CLI is required.
